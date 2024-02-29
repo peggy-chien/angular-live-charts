@@ -18,4 +18,13 @@ export class PricesEffects {
       )
     ), { dispatch: false }
   );
+
+  stopGettingCryptoPrices$: Observable<void> = createEffect(() =>
+    this.actions$.pipe(
+      ofType(pricesActions.stopGettingCryptoPrices),
+      map(() =>
+        this.pricesService.disconnectCryptoSocket()
+      )
+    ), { dispatch: false }
+  );
 }
