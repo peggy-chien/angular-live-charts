@@ -10,4 +10,8 @@ export class PricesFacade {
   getCryptoPrices() {
     this.store.dispatch(pricesActions.getCryptoPrices());
   }
+
+  stopGettingCryptoPrices() {
+    this.store.dispatch(pricesActions.stopGettingCryptoPrices());
+  }
 }
